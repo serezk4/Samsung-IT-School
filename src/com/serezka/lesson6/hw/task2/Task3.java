@@ -19,10 +19,13 @@ public class Task3 {
         sc.useLocale(Locale.US);
 
         int num = sc.nextInt();
-        System.out.println(num < 0 || num > 100 ? "Error! 0<{number}<100 range only!" : numToRoman(num));
+        System.out.println(num < 0 || num > 100 ? "Error! 0<{number}<=100 range only!" : numToRoman(num));
     }
 
     private static String numToRoman(int n) {
+        if (n <= 0)
+            return "Unexpected number!";
+
         StringBuilder result = new StringBuilder();
 
         Map<Integer, String> romanNums = new HashMap<>();
